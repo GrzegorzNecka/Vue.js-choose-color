@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>VUE - wybierz kolor tła</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.5.0/spectre.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container grid-lg">
+
+        <div id="app" v-cloak>
+
+            <h1>Wybierz kolor tła kwadratu</h1>
+
+            <div class="form-group">
+                <div class="col-2">
+                    <label class="form-label">Wybierz kolor</label>
+                </div>
+                <div class="col-3">
+
+                    <select class="form-select" v-model="color">
+
+                        <option disabled selected value="">Wybierz kolor</option>
+
+                        <option v-for="object in colors" :value="object.value">{{object.name}}</option>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="color" v-bind:style="{'background-color' : color}"></div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
